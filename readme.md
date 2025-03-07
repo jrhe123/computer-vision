@@ -1,0 +1,71 @@
+### Deep learning
+1. 向量化与矩阵话
+- [线性回归的向量化 - 前向传播] 
+z = w^T * x + b
+z = w1*x1 + w2*x2 + w3*x3 + ... + b (一个神经元)
+
+非向量化
+for i in range(n):
+    z += w[i] * x[i]
+z += b
+
+向量化
+w_t = w.T
+z = np.dot(w_t, x) + b
+
+
+- [逻辑回归的向量化- 前向传播] 
+z(1) = w^T * x(1) + b
+a(1) = sigmoid(z(1))
+
+z(2) = w^T * x(2) + b
+a(2) = sigmoid(z(2))
+
+z(3) = w^T * x(3) + b (3个样本)
+a(3) = sigmoid(z(3))
+
+使用矩阵代表x (n行m列)
+X = [x1 x2 x3]
+
+w^T * X + [b b ... b] = [z1 z2 z3 ..z(m)] = z
+z = np.dot(w.T, X) + b
+a = sigmoid(z) = 1 / (1 + np.exp(-z))
+
+
+- [逻辑回归的矩阵化 - 多个神经元 - 前向传播] 
+使用矩阵代表X (n行m列)
+X = [x1 x2 x3]
+
+使用矩阵代表W (n行k列) 代表每层神经的权重
+W = [w1 w2 w3]
+
+Z = np.dot(W.T, X) + b
+A = relu(Z)
+
+- [逻辑回归的矩阵化 - 多个神经元 - 反向传播] 
+损失函数(L)关于w的偏导：
+
+偏导/偏导(w) L(w, b)
+偏导(L)/偏导(z) = sigma - y(i) = a - y(i)
+* σ sigma
+* 𝛿 偏导
+* d 梯度
+
+dZ = [dz(1) dz(2) dz(3) ... dz(m)]
+A = [a(1) a(2) a(3) ... a(m)]
+Y = [y(1) y(2) y(3) ... y(m)]
+dZ = A - Y = [a(1) - y(1) a(2) - y(2) a(3) - y(3) ... a(m) - y(m)]
+
+计算w和b的梯度:
+dB = 1/m * np.sum(dZ)
+dW = 1/m * np.dot(dZ, X)
+
+2. L2正则化
+3. Dropout正则化
+4. 数据归一化处理
+5. 初始化权重参数
+6. 全批量梯度下降
+7. 随机梯度下降
+8. 小批量梯度下降 (*)
+9. 参数优化
+10. BatchNormalization
