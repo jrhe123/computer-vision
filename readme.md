@@ -106,4 +106,8 @@ lambda / 2m * Σ(n, j=1) w(j) ^ 2
 * 引入了超参数 mini-batch size，设置不好的话也会引起梯度下降剧烈震荡
 
 9. 参数优化
+* 动量梯度下降: 参考历史梯度来平滑梯度
+* RMSProp: 调整学习率
+* Adam = Momentum + RMSProp
+
 10. BatchNormalization
