@@ -1,2 +1,5 @@
 images/
 computer-vision-env/
+
+data/
+*.pth
