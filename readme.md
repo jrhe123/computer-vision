@@ -112,3 +112,6 @@ lambda / 2m * Σ(n, j=1) w(j) ^ 2
 
 10. BatchNormalization
 * 每一层都进行归一化 (隐藏层)
+
+
+ref: https://coding.imooc.com/learn/list/913.html
